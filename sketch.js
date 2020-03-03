@@ -13,8 +13,9 @@ function setup(){
     values[i] = random(height);
     states[i] = -1;
   }
-  //frameRate(5);
-  quickSort(values, 0, values.length - 1);
+  frameRate(5);
+  //quickSort(values, 0, values.length - 1);
+  bubbleSort(values);
 }
 
 
@@ -72,20 +73,26 @@ async function partition(arr, start, end){
 
 
 //bubble sort function
-function bubbleSort(values){
+async function bubbleSort(arr){
+  /*
   if(i < values.length){
-    for(let j = 0; j < values.length - i - 1; j++){
-      let a = values[j];
-      let b = values[j + 1];
+  **/
+    for(let j = 0; j < arr.length - 1; j++){
+      let a = arr[j];
+      let b = arr[j + 1];
       if(a > b){
-        swap(values, j, j + 1);
+        await swap(values, a, b);
       }
+      return;
     }
-  }else{
-    console.log('finished');
-    noLoop();
+    /*
+    i++;
   }
-  i++;
+  else{
+    console.log('finished');
+    //noLoop();
+  }
+  **/
 }
 
 
