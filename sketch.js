@@ -13,15 +13,15 @@ function setup(){
     values[i] = random(height);
     states[i] = -1;
   }
-  frameRate(5);
+  //frameRate(1);
   //quickSort(values, 0, values.length - 1);
-  bubbleSort(values);
+  selectionSort(values);
 }
 
 
 
 function draw(){
-  background(51);
+  background(50);
 
   for(let i = 0; i < values.length; i++){
     stroke(255);
